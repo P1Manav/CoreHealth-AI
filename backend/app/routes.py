@@ -111,9 +111,11 @@ def chat():
     try:
         from app.scoring.ragas_lite import select_best
         from app.rag.retriever import embed_texts
+        from app.ensemble.openrouter import generate_questions_for_rqg
 
-        def _rqg_fn(text):
-            return [user_message]
+        def _rqg_fn(response_text):
+            return generate_questions_for_rqg(response_text)
+
 
         best = select_best(
             candidates=candidates,
