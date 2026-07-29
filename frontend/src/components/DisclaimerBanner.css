@@ -1,0 +1,70 @@
+/* DisclaimerBanner styles */
+
+.disclaimer-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  margin: 0.75rem 1rem 0;
+  border-radius: var(--radius-sm);
+  animation: bannerSlideIn 0.3s ease-out;
+}
+
+@keyframes bannerSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.disclaimer-banner--weak {
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.disclaimer-banner--strong {
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.disclaimer-banner__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.disclaimer-banner__icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.disclaimer-banner__content p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.disclaimer-banner__content strong {
+  color: var(--color-text);
+}
+
+.disclaimer-banner__close {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: var(--color-text-dim);
+  font-size: 1.1rem;
+  border-radius: 50%;
+  border: none;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.disclaimer-banner__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text);
+}

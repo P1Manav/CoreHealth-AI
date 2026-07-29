@@ -1,0 +1,143 @@
+/* Base reset and global styles — Platform Hero (Lime Remix / Light Warm System) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+/* --- DARK THEME (Image 2: Platform Hero Lime Remix) --- */
+[data-theme='dark'], :root {
+  --color-theme: 'dark';
+  --color-primary: #A3E635; /* Vibrant Lime */
+  --color-primary-hover: #bef264;
+  --color-primary-text: #020617;
+  
+  --color-secondary: #020617;
+  --color-tertiary: #0F172A;
+
+  --color-bg: #020617;
+  --color-surface: #0F172A;
+  --color-surface-elevated: #1E293B;
+  --color-surface-glass: rgba(9, 19, 30, 0.78);
+
+  --color-text: #F8FAFC;
+  --color-text-display: #FFFFFF;
+  --color-text-muted: #94A3B8;
+  --color-text-secondary: #CBD5E1;
+  --color-text-dim: #64748B;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-subtle: #334155;
+  --color-border-accent: rgba(163, 230, 53, 0.4);
+
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  --color-success: #A3E635;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-card: 32px;
+  --radius-pill: 9999px;
+
+  --shadow-lg: 0 32px 80px rgba(0, 0, 0, 0.7);
+  --shadow-primary-glow: 0 0 25px rgba(163, 230, 53, 0.35);
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* --- LIGHT THEME (Image 1: Warm Coral / Terracotta Serif Hero) --- */
+[data-theme='light'] {
+  --color-theme: 'light';
+  --color-primary: #d96b43; /* Warm Terracotta / Coral */
+  --color-primary-hover: #c45731;
+  --color-primary-text: #FFFFFF;
+
+  --color-secondary: #FFFFFF;
+  --color-tertiary: #f8fafc;
+
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #f1f5f9;
+  --color-surface-glass: rgba(255, 255, 255, 0.78);
+
+  --color-text: #1e293b;
+  --color-text-display: #111827;
+  --color-text-muted: #64748b;
+  --color-text-secondary: #475569;
+  --color-text-dim: #94a3b8;
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-subtle: #e2e8f0;
+  --color-border-accent: rgba(217, 107, 67, 0.35);
+
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-success: #10b981;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  --shadow-lg: 0 32px 80px rgba(217, 107, 67, 0.15);
+  --shadow-primary-glow: 0 4px 20px rgba(217, 107, 67, 0.3);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}

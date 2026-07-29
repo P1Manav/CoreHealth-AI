@@ -1,0 +1,196 @@
+/* MessageBubble Styles */
+
+.message {
+  display: flex;
+  gap: 0.85rem;
+  max-width: 860px;
+  width: 100%;
+  animation: messageSlideIn 0.25s ease-out;
+  padding: 0.25rem 0;
+}
+
+@keyframes messageSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.message--user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message--assistant {
+  align-self: flex-start;
+}
+
+/* Avatar */
+.message__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.message--user .message__avatar {
+  background: rgba(163, 230, 53, 0.15);
+  border: 1px solid rgba(163, 230, 53, 0.3);
+  color: var(--color-primary);
+}
+
+.message--assistant .message__avatar {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+/* Body */
+.message__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Content bubble */
+.message__content {
+  padding: 0.9rem 1.2rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  word-wrap: break-word;
+}
+
+.message--user .message__content {
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+  font-weight: 500;
+  border-bottom-right-radius: 4px;
+}
+
+[data-theme='light'] .message--user .message__content {
+  background: var(--color-primary);
+}
+
+.message--assistant .message__content {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-bottom-left-radius: 4px;
+}
+
+.message--error .message__content {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.message--checkin .message__content {
+  background: linear-gradient(135deg, rgba(163, 230, 53, 0.07), rgba(59, 130, 246, 0.07));
+  border: 1px solid rgba(163, 230, 53, 0.2);
+  color: var(--color-text-secondary);
+}
+
+/* Markdown elements inside content */
+.message__content p {
+  margin: 0 0 0.75rem;
+}
+
+.message__content p:last-child {
+  margin-bottom: 0;
+}
+
+.message__content h3 {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--color-text-display);
+  margin: 1rem 0 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.message__content h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-display);
+  margin: 0.75rem 0 0.3rem;
+}
+
+.message__content ul {
+  margin: 0.4rem 0 0.75rem;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.message__content li {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.message__content strong {
+  font-weight: 700;
+  color: var(--color-text-display);
+}
+
+.message--user .message__content strong {
+  color: inherit;
+}
+
+.message__content em {
+  font-style: italic;
+}
+
+.message__content code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.message__content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(163, 230, 53, 0.4);
+  transition: text-decoration-color 150ms ease;
+}
+
+.message__content a:hover {
+  text-decoration-color: var(--color-primary);
+}
+
+.message--user .message__content a {
+  color: inherit;
+  text-decoration-color: rgba(2, 6, 23, 0.5);
+}
+
+/* Meta (model tag) */
+.message__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0.2rem;
+}
+
+.message__model {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  color: var(--color-text-dim);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+
+.message__model i {
+  font-size: 0.75rem;
+}

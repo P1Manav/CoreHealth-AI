@@ -1,0 +1,23 @@
+# Flask & extensions
+flask>=3.0
+flask-cors>=4.0
+python-dotenv>=1.0
+
+# Auth / Supabase
+supabase>=2.0
+PyJWT>=2.8
+cryptography>=41.0
+
+# Memory (weak tier)
+cachetools>=5.3
+
+# Embeddings & RAG
+sentence-transformers>=2.2
+chromadb>=0.4
+numpy>=1.24
+
+# HTTP client for OpenRouter
+requests>=2.31
+
+# Testing
+pytest>=7.4

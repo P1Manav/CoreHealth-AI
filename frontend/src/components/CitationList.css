@@ -1,0 +1,51 @@
+/* CitationList styles */
+
+.citations {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(59, 130, 246, 0.04);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.citations__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-dim);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.citations__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.citations__item {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0.3rem 0.6rem;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.citations__item:hover {
+  border-color: var(--color-primary);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.citations__name {
+  font-size: 0.78rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.citations__source {
+  font-size: 0.68rem;
+  color: var(--color-text-dim);
+}
