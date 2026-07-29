@@ -108,13 +108,30 @@ def chat():
             "error": "No model responses received",
         })
 
-    best = {
-        "model": candidates[0]["model"],
-        "content": candidates[0]["content"],
-        "scores": {},
-        "composite": 1.0,
-        "selected": True,
-    }
+    try:
+        from app.scoring.ragas_lite import select_best
+        from app.rag.retriever import embed_texts
+
+        def _rqg_fn(text):
+            return [user_message]
+
+        best = select_best(
+            candidates=candidates,
+            kb_chunks=kb_chunks,
+            original_question=user_message,
+            embed_fn=embed_texts,
+            rqg_fn=_rqg_fn,
+        )
+    except Exception as e:
+        logger.error(f"Scoring error, defaulting to first candidate: {e}")
+        best = {
+            "model": candidates[0]["model"],
+            "content": candidates[0]["content"],
+            "scores": {},
+            "composite": 1.0,
+            "selected": True,
+        }
+
     response_text = postfilter(best.get("content", SAFE_FALLBACK_RESPONSE), kb_chunks)
 
     if tier == "strong":
