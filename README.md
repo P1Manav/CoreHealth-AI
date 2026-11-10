@@ -1,4 +1,4 @@
-# Healthcare AI Chatbot
+# CoreHealth AI — Healthcare RAG Chatbot
 
 A production-quality healthcare information chatbot with a **React (Vite) frontend** and **Flask backend**, featuring a **two-tier memory architecture**, **multi-model ensemble via OpenRouter**, **RAGAS-lite evaluation**, and **RAG pipeline** grounded in public-domain medical sources.
 
@@ -235,7 +235,7 @@ Each candidate response is scored locally (no external API) on four dimensions:
 ## Known Limitations
 
 - **Free OpenRouter models** have rate limits — fine for a demo, not production traffic.
-- **Medical KB is small** and curated for this assignment — not a certified clinical dataset.
+- **Medical KB is small** and curated for demonstration — not a certified clinical dataset.
 - **Emergency detection** is a safety net, not certified triage — always defer to real emergency services.
 - **Weak-tier memory loss** on server restart or TTL expiry is **intentional** — it's a design decision (privacy-by-default for anonymous users), not a bug.
 - **RAGAS-lite** approximates real RAGAS metrics using local embeddings; running the actual `ragas` package against a labeled eval set is recommended as future work.
@@ -266,4 +266,3 @@ Each candidate response is scored locally (no external API) on four dimensions:
 Built for educational purposes. Medical content sourced from:
 - **MedlinePlus** (NIH/NLM) — U.S. government work, public domain
 - **CDC** fact sheets — U.S. government work, public domain
-# F500Days_Assignment
